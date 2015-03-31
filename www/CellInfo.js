@@ -1,8 +1,7 @@
-module.exports = (function() {
-    alert('UGU');
-    return {
-        'ugu': function() {
-            return 'ugu';
-        };
-    };
-})();
+var CellInfo = {
+    'ugu': function() {
+        return 'ugu';
+    }
+};
+
+module.exports = CellInfo;
