@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="ru.slavav.cellinfo"
+    version="0.0.1">
+    <name>CellInfo</name>
+	<js-module src="www/CellInfo.js" name="CellInfo">
+        <clobbers target="CellInfo" />
+    </js-module>
+
+    <platform name="android">
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		</config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CellInfo">
+                <param name="android-package" value="ru.slavav.cellinfo.CellInfo" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/src/ru/slavav/cellinfo/CellInfo.java" target-dir="src/ru/slavav/cellinfo" />
+    </platform>
+</plugin>
