@@ -1,7 +1,5 @@
-var CellInfo = {
+module.exports = {
     'ugu': function() {
         return 'ugu';
     }
 };
-
-module.exports = CellInfo;
